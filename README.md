@@ -143,3 +143,17 @@ To test since kernel resume parameters only work after reboot. To check hibernat
 where resume is passed major:minor numbers from lsblk indicating partition which contains our swapfile.
 
 and offset is the calculated offset
+
+
+## Disable zram and move to zswap 
+
+I have now decided to use zswap compeletly I believe it is better overall.
+
+Disable zram on fedora
+> sudo touch /etc/systemd/zram-generator.conf
+
+Enable zswap 
+> grubby --update-kernel=ALL --args="zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=z3fold"
+
+
+Reboot and enjoy
