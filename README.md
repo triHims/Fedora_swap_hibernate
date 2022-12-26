@@ -112,6 +112,16 @@ try to suspend using '
 
 It should work. 
 
+Also uncomment these lines in /etc/systemd/sleep.conf
+```
+AllowSuspend=yes
+AllowHibernation=yes
+AllowSuspendThenHibernate=yes
+HibernateState=disk
+HibernateDelaySec=120min
+
+```
+
 ### Enable suspend then hybernate
 
 any systemd service can by overriden by
