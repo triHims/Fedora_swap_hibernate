@@ -164,6 +164,10 @@ Reboot , try systemctl hibernate if it fails then reconfigure selinux and enjoy
 View pool stats 
 > grep -r . /sys/kernel/debug/zswap
 
+Setting
+> grep -R . /sys/module/zswap
+
 Debug service 
 
 > sudo journalctl -u systemd-hibernate.service
+
