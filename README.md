@@ -131,11 +131,13 @@ use `systemctl cat` to override suspend.service and pasted the copied suspend-th
 
 
 ### Misc 
-To test if since resume parameters only work after reboot to check hybernate right away.
+To test since kernel resume parameters only work after reboot. To check hibernate right away.
 
 ```
 # echo 251:5 > /sys/power/resume
 # echo 5288194 > /sys/power/resume_offset
+# echo reboot > /sys/power/disk
+# echo disk > /sys/power/state
 ```
 
 where resume is passed major:minor numbers from lsblk indicating partition which contains our swapfile.
