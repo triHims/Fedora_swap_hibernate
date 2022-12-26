@@ -156,7 +156,14 @@ Enable zswap
 > grubby --update-kernel=ALL --args="zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=z3fold"
 
 
-Reboot and enjoy
+Reboot , try systemctl hibernate if it fails then reconfigure selinux and enjoy
+
+
+### MISC
 
 View pool stats 
 > grep -r . /sys/kernel/debug/zswap
+
+Debug service 
+
+> sudo journalctl -u systemd-hibernate.service
