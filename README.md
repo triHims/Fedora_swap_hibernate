@@ -157,3 +157,6 @@ Enable zswap
 
 
 Reboot and enjoy
+
+View pool stats 
+> grep -r . /sys/kernel/debug/zswap
